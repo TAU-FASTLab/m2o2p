@@ -15,3 +15,4 @@ The manual can be followed for setting up the component.
 - original_limits.txt holds the user defined limits for bending and pressure of fingers
 - ros2_ros1_command.yaml is used to configure Integration-Service
 - captoglovesdk folder holds the .exe and configuration file for CaptoGloveSDK
+- SHOP4CF.postman_collection.json has CRUD operations for testing the component
