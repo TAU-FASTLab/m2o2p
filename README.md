@@ -3,6 +3,12 @@
 This repository for SHOP4CF Component M2O2P which stands for  
 Multi-Modal Online and Offline Programming Solutions  
 
+M2O2P enables natural human inputs by reading sensor data from CaptoGlove LLC  
+sensor glove, and changing the raw sensor data to states and so on to gestures.  
+These gestures are used to make commands which are POSTed to FIWARE and  
+published to ROS2 topics, and additionally using Integration-Service  
+as a bridge to ROS1 topics.  
+
 Check the [introduction video](www.youtube.com) for more information about the component  
 
 This repository stands as supportive repository for the component.  
