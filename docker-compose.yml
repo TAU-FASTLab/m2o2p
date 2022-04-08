@@ -1,5 +1,5 @@
 version: '3.9'
-services:
+services:     
     postgres:
         image: postgres
         container_name: postgres
@@ -24,9 +24,8 @@ services:
         container_name: orion
         expose:
             - "1026"
-            
+
     integration-service:
-        build: ./integration-service
         image: m2o2p-integration-service:rc
         container_name: integration-service
         depends_on:
@@ -34,14 +33,11 @@ services:
         stdin_open: true
         tty: true
         volumes:
-            - /c/Users/xtsara/Documents/workspaces/GLOVEv3/ros2_ros1_command.yaml:/home/is-workspace/src/bridge/src/ros2_ros1_command.yaml
+            - /c/Users/xtsara/Documents/workspaces/GLOVEv3/ros2_ros1_command.yaml:/home/is-workspace/src/ros2_ros1_command.yaml
     
     ros2-fiware-bridge:
-        build: ./ros2-fiware-bridge
         image: m2o2p-ros2-fiware-bridge:1.0.0
         container_name: ros2-fiware-bridge
-        #links:
-        #    - "orion:192.168.0.43"
         expose:
             - "54100"
         ports: 
@@ -54,8 +50,7 @@ services:
             - /c/Users/xtsara/Documents/workspaces/GLOVEv3/configuration.json:/home/ros2_ws/configuration.json
     
     ac:
-        build: ./ac
-        image: m2o2p-ac:1.0.0
+        image: m2o2p-ac:1.0.1
         depends_on:
         - "postgres"
         ports: 
@@ -68,15 +63,8 @@ services:
         volumes:
             - /c/Users/xtsara/Documents/workspaces/GLOVEv3/original_limits.txt:/home/ros2_ws/src/ac/src/text_files/original_limits.txt
             - /c/Users/xtsara/Documents/workspaces/GLOVEv3/configuration.json:/home/ros2_ws/src/ac/src/text_files/configuration.json
-
-    ros1:
-        build: ./ros1-subscriber
-        image: ros1-subscriber:ros1-subscriber
-        container_name: ros1
-        command: bash -c "source /opt/ros/noetic/setup.bash && roscore"
     
     webapp:
-        build: ./web_app
         image: m2o2p-webapp:1.0.0
         ports:
             - "54400:54400"
