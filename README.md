@@ -9,7 +9,7 @@ These gestures are used to make commands which are POSTed to FIWARE and
 published to ROS2 topics, and additionally using Integration-Service  
 as a bridge to ROS1 topics.  
 
-Check the [introduction video](www.youtube.com) for more information about the component  
+Check the [introduction video](https://youtu.be/e0BxHBktAxE) for more information about the component  
 
 This repository stands as supportive repository for the component.  
 
